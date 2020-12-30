@@ -14,12 +14,28 @@ bool verification_doublon(Liste& liste, Mot& id) {
 	return false;
 }
 
+void ecrire(Liste& liste, Mot id) {
+	if (liste.nb_mots >= liste.capa) {
+		unsigned int newTaille = (liste.capa+1) * liste.pas_extension;
+		Mot* newT = new Mot[newTaille];
+		unsigned int i;
+		for (i = 0; i < liste.nb_mots; ++i) {
+			strcpy(newT[i], liste.tab_mots[i]);
+		}
+		delete[] liste.tab_mots;
+		liste.tab_mots = newT;
+		liste.capa = newTaille;
+	}
+	strcpy(liste.tab_mots[liste.nb_mots], id);
+	liste.nb_mots++;
+}
+
 
 void lire_liste(Mot& id, Liste& liste) {
 	cin >> id;
 	if (strcmp(id, "*") != 0) {
 		if (verification_doublon(liste, id) == false) {
-			strcpy(liste.tab_mots[liste.nb_mots++], id);
+			ecrire(liste, id);
 		}
 	}
 }
@@ -41,8 +57,7 @@ void tri_alphabetique(Liste& liste) {
 void exo2() {
 	Mot buffer;
 	Liste liste;
-	liste.nb_mots = 0;
-	liste.nb_points = 0;
+	initialiser(liste);
 	while (strcmp(buffer, "*") != 0) {
 		lire_liste(buffer, liste);
 	}
