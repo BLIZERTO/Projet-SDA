@@ -6,7 +6,7 @@ using namespace std;
 void exo1();
 void exo2();
 void exo3();
-void exo4() {};
+void exo4();
 void exo5() {};
 void exo6() {};
 
@@ -32,13 +32,13 @@ int main() {
 	cout << endl;
 	switch (num) {
 	case 1:
-		cout << "Option 1 choisie. Vous pouvez maintenant inserer votre liste." << endl; exo1(); break;
+		cout << "Option 1 choisie. Vous pouvez maintenant inserer votre liste." << endl;  exo1(); break;
 	case 2:
 		cout << "Option 2 choisie. Vous pouvez maintenant inserer votre liste." << endl;  exo2(); break;
 	case 3:
 		cout << "Option 3 choisie. Vous pouvez maintenant inserer votre liste." << endl;  exo3(); break;
 	case 4:
-		exo4(); break;
+		cout << "Option 4 choisie. Vous pouvez maintenant inserer votre liste." << endl;  exo4(); break;
 	case 5:
 		exo5(); break;
 	case 6:
