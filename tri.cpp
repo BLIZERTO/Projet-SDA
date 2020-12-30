@@ -15,7 +15,7 @@ bool verification_doublon(Liste& liste, Mot& id) {
 }
 
 
-void lire_et_enregistrer(Mot& id, Liste& liste) {
+void lire_liste(Mot& id, Liste& liste) {
 	cin >> id;
 	if (strcmp(id, "*") != 0) {
 		if (verification_doublon(liste, id) == false) {
@@ -26,8 +26,8 @@ void lire_et_enregistrer(Mot& id, Liste& liste) {
 
 
 void tri_alphabetique(Liste& liste) {
-	for (int i = 0; i < liste.nb_mots; i++) {
-		for (int j = i + 1; j < liste.nb_mots; j++) {
+	for (unsigned int i = 0; i < liste.nb_mots; i++) {
+		for (unsigned int j = i + 1; j < liste.nb_mots; j++) {
 			if (strcmp(liste.tab_mots[i], liste.tab_mots[j]) > 0) {
 				Mot tmp;
 				strcpy(tmp, liste.tab_mots[i]);
@@ -44,10 +44,10 @@ void exo2() {
 	liste.nb_mots = 0;
 	liste.nb_points = 0;
 	while (strcmp(buffer, "*") != 0) {
-		lire_et_enregistrer(buffer, liste);
+		lire_liste(buffer, liste);
 	}
 	tri_alphabetique(liste);
-	for (int i = 0; i < liste.nb_mots; i++) {
+	for (unsigned int i = 0; i < liste.nb_mots; i++) {
 		cout << liste.tab_mots[i] << endl;
 	}
 	cout << "*" << endl;

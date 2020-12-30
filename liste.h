@@ -11,8 +11,4 @@ struct Liste {
 	unsigned int nb_points;
 };
 
-void lire_et_compter(Mot& id, Liste& liste);
-void lire_et_enregistrer(Mot& id, Liste& liste);
-void tri_alphabetique(Liste& liste);
-void comptage_de_points(int nb_lettres_mot, Liste& liste);
-bool verification_doublon(Liste& liste, Mot& id);
+

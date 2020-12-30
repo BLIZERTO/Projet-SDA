@@ -1,14 +1,7 @@
-#include <iostream>
-#include "liste.h"
+#include "main.h"
 
 using namespace std;
 
-void exo1();
-void exo2();
-void exo3();
-void exo4();
-void exo5() {};
-void exo6() {};
 
 int main() {
 	int num;

@@ -1,7 +1,8 @@
 #pragma warning (disable : 4996)
 #include <iostream>
 #include <string.h>
-#include "listes.h"
+#include "lecture.h"
+#include "canonique.h"
 
 using namespace std;
 
@@ -20,22 +21,22 @@ void exo4() {
 	Mot buffer;
 	strcpy(buffer, "NULL");
 	Listes listes;
-	for (int i = 0; i < MAX_LISTES; i++) {
+	for (unsigned int i = 0; i < MAX_LISTES; i++) {
 		listes.tab_listes[i].nb_mots = 0;
 	};
 	listes.nb_listes = 0;
 
-	for (int k = 0; k < 2; k++) {
+	for (unsigned int k = 0; k < 2; k++) {
 		while (strcmp(buffer, "*") != 0) {
-			lire_et_comparer(buffer, listes);
+			lire_listes(buffer, listes);
 		}
 		strcpy(buffer, "NULL");
 	}
-	for (int j = 0; j < listes.nb_listes; j++) {
+	for (unsigned int j = 0; j < listes.nb_listes; j++) {
 		tri_alphabetique(listes.tab_listes[j]);
 	}
 	mots_apparents(listes);
-	for (int z = 0; z < listes.tab_listes[2].nb_mots; z++) {
+	for (unsigned int z = 0; z < listes.tab_listes[2].nb_mots; z++) {
 		cout << listes.tab_listes[2].tab_mots[z] << endl;
 	}
 	cout << "*" << endl;

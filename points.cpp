@@ -1,14 +1,10 @@
 #pragma warning (disable : 4996)
 #include <iostream>
 #include <string.h>
-#include "liste.h"
+#include "lecture.h"
+#include "points.h"
 
 using namespace std;
-
-void lire_et_compter(Mot& id, Liste& liste) {
-	cin >> id;
-	comptage_de_points(strlen(id), liste);
-}
 
 void comptage_de_points(int nb_lettres_mot, Liste& liste) {
 	int nb_points_mot = 0;
@@ -39,7 +35,8 @@ void exo1() {
 	liste.nb_mots = 0;
 	liste.nb_points = 0;
 	while (strcmp(buffer, "*") != 0) {
-		lire_et_compter(buffer, liste);
+		lire_liste(buffer, liste);
+		comptage_de_points(strlen(buffer), liste);
 	}
 	cout << liste.nb_points;
 }

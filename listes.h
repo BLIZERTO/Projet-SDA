@@ -10,4 +10,3 @@ struct Listes {
 
 void mots_apparents(Listes& listes);
 void mots_pas_apparents(Listes& listes);
-void lire_et_comparer(Mot& id, Listes& listes);
