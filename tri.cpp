@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string.h>
 #include "liste.h"
+#include "dynam.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ bool verification_doublon(Liste& liste, Mot& id) {
 	return false;
 }
 
-void ecrire(Liste& liste, Mot id) {
+void ecrire(Liste& liste, Mot& id) {
 	if (liste.nb_mots >= liste.capa) {
 		unsigned int newTaille = (liste.capa+1) * liste.pas_extension;
 		Mot* newT = new Mot[newTaille];
@@ -66,4 +67,5 @@ void exo2() {
 		cout << liste.tab_mots[i] << endl;
 	}
 	cout << "*" << endl;
+	detruire(liste);
 }
