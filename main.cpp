@@ -37,4 +37,5 @@ int main() {
 	case 6:
 		exo6(); break;
 	}
+	return 0;
 }

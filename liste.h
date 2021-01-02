@@ -12,6 +12,3 @@ struct Liste {
 	unsigned int nb_mots;
 	unsigned int nb_points;
 };
-
-
-void initialiser(Liste& liste);

@@ -12,13 +12,11 @@ void initialiser(Liste& liste) {
 	liste.nb_points = 0;
 	liste.capa = 1;
 	liste.pas_extension = 5;
-	Mot* newT = new Mot[1];
-	liste.tab_mots = newT;
+	liste.tab_mots = new Mot[liste.capa];
 }
 
 void detruire(Liste& liste) {
 	delete[] liste.tab_mots;
-	liste.tab_mots = NULL;
 }
 
 

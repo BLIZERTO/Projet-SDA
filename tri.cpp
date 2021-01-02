@@ -17,7 +17,7 @@ bool verification_doublon(Liste& liste, Mot& id) {
 
 void ecrire(Liste& liste, Mot& id) {
 	if (liste.nb_mots >= liste.capa) {
-		unsigned int newTaille = (liste.capa+1) * liste.pas_extension;
+		unsigned int newTaille = (liste.nb_mots+1) * liste.pas_extension;
 		Mot* newT = new Mot[newTaille];
 		unsigned int i;
 		for (i = 0; i < liste.nb_mots; ++i) {
@@ -26,6 +26,10 @@ void ecrire(Liste& liste, Mot& id) {
 		delete[] liste.tab_mots;
 		liste.tab_mots = newT;
 		liste.capa = newTaille;
+
+		if (liste.capa <= 5) { liste.pas_extension = 4; }
+		if (liste.capa <= 20) { liste.pas_extension = 3; }
+		if (liste.capa <= 60) { liste.pas_extension = 2; }
 	}
 	strcpy(liste.tab_mots[liste.nb_mots], id);
 	liste.nb_mots++;
