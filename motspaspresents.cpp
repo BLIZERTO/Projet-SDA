@@ -45,6 +45,7 @@ void lire_listes(Mot& id, Listes& listes, unsigned int i) {
 
 		}
 		listes.nb_listes++;
+		initialiser(listes.tab_listes[listes.nb_listes]);
 	}
 }
 

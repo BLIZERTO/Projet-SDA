@@ -1,8 +1,6 @@
 #pragma once
 #include "liste.h"
 
-const unsigned int MAX_LISTES = 10;
-
 struct Listes {
 	Liste* tab_listes;
 	unsigned int nb_listes;

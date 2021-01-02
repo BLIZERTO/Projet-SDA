@@ -7,6 +7,8 @@ int main() {
 	int num;
 	cout << "Selectionner un nombre entre 1 et 6 pour choisir un des sprints."
 		<< endl << endl
+		<< "************************************************************************************************"
+		<< endl
 		<< "Rappel :"
 		<< endl
 		<< "1. Lire une liste de mots saisie au clavier et afficher a l'ecran le nombre de points qu'elle represente ;"
@@ -20,7 +22,9 @@ int main() {
 		<< "5. Lire une liste de listes de mots saisie au clavier et afficher a l'ecran la liste de tous les mots apparaissant dans au moins deux de ces listes ;"
 		<< endl
 		<< "6. Lire un plateau suivi d'une liste de mots saisis au clavier et afficher a l'ecran les mots de la liste etant presents sur la plateau."
-		<< endl;
+		<< endl
+		<< "************************************************************************************************"
+		<< endl << endl;
 		cin >> num;
 	cout << endl;
 	switch (num) {
@@ -33,7 +37,7 @@ int main() {
 	case 4:
 		cout << "Option 4 choisie. Vous pouvez maintenant inserer votre liste." << endl;  exo4(); break;
 	case 5:
-		exo5(); break;
+		cout << "Option 5 choisie. Vous pouvez maintenant inserer votre liste." << endl;  exo5(); break;
 	case 6:
 		exo6(); break;
 	}
